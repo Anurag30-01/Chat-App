@@ -1,0 +1,9 @@
+
+body{
+  background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.885)), url("https://w0.peakpx.com/wallpaper/386/636/HD-wallpaper-comet-kimi-no-na-wa-8k-your-name.jpg");
+    /* background: url('https://w0.peakpx.com/wallpaper/386/636/HD-wallpaper-comet-kimi-no-na-wa-8k-your-name.jpg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
