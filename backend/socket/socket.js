@@ -35,13 +35,6 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("A user disconnected:", socket.id);
 
-    // Remove the user from the map
-    // for (const [key, value] of userSocketMap.entries()) {
-    //   if (value === socket.id) {
-    //     userSocketMap.delete(key);
-    //     break;
-    //   }
-    // }
     delete userSocketMap[userId];
 
     // Emit the updated list of online users

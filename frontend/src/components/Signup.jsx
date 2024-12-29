@@ -20,22 +20,22 @@ const SIGNUP=()=>{
     }
     return(
         <>
-        <div className='centered-div'>
+        <div className='signUp_div'>
             <h1>Sign Up <span>ChatApp</span></h1>
             <div>
-                <form  onSubmit={handleSubmit} >
-                    <div className='form'>
-                    <label htmlFor="" >Full Name</label><br />
-                    <input type="text" placeholder="Enter Name" value={inputs.fullName} 
+                <form onSubmit={handleSubmit} >
+                    <div className='form' name='signUp_form'>
+                    <label htmlFor='fullName'>Full Name</label><br />
+                    <input type="text" id='fullName' placeholder="Enter Name" value={inputs.fullName} 
                     onChange={(e) => setInputs({...inputs,fullName: e.target.value})}/><br />
-                    <label htmlFor="" >Username</label><br />
-                    <input type="text" placeholder="Enter username" value={inputs.username}
+                    <label htmlFor='userName' >Username</label><br />
+                    <input type="text" id='userName' placeholder="Enter username" value={inputs.username}
                     onChange={(e)=>setInputs({...inputs,username: e.target.value})}/><br />
-                    <label htmlFor="">Password:</label><br />
-                    <input type="password" placeholder='Enter password' value={inputs.password}
+                    <label htmlFor='password'>Password:</label><br />
+                    <input type="password" id='password' placeholder='Enter password' value={inputs.password}
                     onChange={(e)=>setInputs({...inputs,password: e.target.value})}/>
-                    <label htmlFor="">Confirm Password:</label><br />
-                    <input type="password" placeholder='Enter Confirm password' value={inputs.confirmPassword}
+                    <label htmlFor='confirmPassword'>Confirm Password:</label><br />
+                    <input type="password" id='confirmPassword' placeholder='Enter Confirm password' value={inputs.confirmPassword}
                     onChange={(e)=>setInputs({...inputs,confirmPassword: e.target.value})}/>
                     </div>
                     <GENDERCHECKBOX onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender}  />
@@ -57,14 +57,14 @@ const GENDERCHECKBOX=({onCheckboxChange,selectedGender})=>{
     return(
         <>
         <div className='gender'>
-                    <label htmlFor='' className={' ${selected}'} >Male:
-                    <input type="radio" name="gender" checked={selectedGender === "male"}
+                    <label htmlFor='male' className={' ${selected}'} >Male:
+                    <input type="radio" name="gender" id='male' checked={selectedGender === "male"}
                     onChange={()=>onCheckboxChange("male")}/>
                     {/* <span className="checkmark"></span> */}
                     </label>
-                    <label htmlFor='' className="">Female:
+                    <label htmlFor='female' className="">Female:
                     
-                    <input type="radio" name="gender" checked={selectedGender === "female"}
+                    <input type="radio" name="gender" id='female' checked={selectedGender === "female"}
                     onChange={()=>onCheckboxChange("female")}/>
                     {/* <span className="checkmark"></span> */}
                     </label><br />

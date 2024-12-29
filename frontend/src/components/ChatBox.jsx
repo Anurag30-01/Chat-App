@@ -6,39 +6,45 @@ import useSendMessage from "../hooks/useSendMessage";
 import MESSAGES from "./messages";
 import useGetMessages from "../hooks/useGetMessages";
 import { useAuthContext } from "../context/AuthContext";
-export default function CHATBOX(){
-    // const NoMsgSelected = true;
-    const{selectedConversation,setSelectedConversation}=useConversation();
+export default function CHATBOX() {
+  // const NoMsgSelected = true;
+  const { selectedConversation, setSelectedConversation } = useConversation();
 
-    // const {loading,messages} = useGetMessages();
-    //         console.log("MESSAGES:",messages);
+  // const {loading,messages} = useGetMessages();
+  //         console.log("MESSAGES:",messages);
 
-    useEffect(()=>{
-      return()=>setSelectedConversation(null)
-    },[setSelectedConversation])
+  useEffect(() => {
+    return () => setSelectedConversation(null);
+  }, [setSelectedConversation]);
 
-    return(
-        <>
-            {!selectedConversation ? (
-                <NoChatSelected />
-            ) : (
-                <ChatSelected />
-            )}
- </>
-    );
-};
-const NoChatSelected = () => {
-  const {authUser}= useAuthContext();
   return (
-      <>
-          <div className="initial_msg">
-              <h2>&#128075; welcome <span>{authUser.fullName}</span></h2>
-              <h3>select a chat to start messaging &#128640;</h3>
-              <IoMdChatboxes className="icon" />
-          </div>
-      </>
+    <>
+      {!selectedConversation ? (
+        <div className="center">
+          <NoChatSelected />
+        </div>
+      ) : (
+        <ChatSelected />
+      )}
+    </>
   );
 }
+const NoChatSelected = () => {
+  const { authUser } = useAuthContext();
+  return (
+    <>
+      <div className="initial_msg">
+        <div>
+          <h2>
+            &#128075; Welcome <span>{authUser.fullName}</span>
+          </h2>
+          <h3>Select a chat to start messaging &#128640;</h3>
+          <IoMdChatboxes className="icon" />
+        </div>
+      </div>
+    </>
+  );
+};
 const ChatSelected =()=>{
   const{selectedConversation,setSelectedConversation}=useConversation();
   return(
