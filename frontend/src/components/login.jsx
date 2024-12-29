@@ -14,14 +14,14 @@ export default function LOGIN(){
     }
     return(
         <>
-        <div className='centered-div'>
+        <div className='login_div'>
             <h1>Login <span>ChatApp</span></h1>
             <form onSubmit={handleSubmit}>
             <div className='form'>
-                <label htmlFor="" >username: </label><br />
+                <label>username: </label><br />
                 <input type="text" placeholder="Enter username" value={username}
                 onChange={(e)=> setUsername(e.target.value)}/><br />
-                <label htmlFor="">Password:</label><br />
+                <label >Password:</label><br />
                 <input type="password" placeholder='Enter password' value={password}
                 onChange={(e)=>setPassword(e.target.value)}/><br />
                 {/* <a href="">'Forget Password'</a><br /><br /> */}

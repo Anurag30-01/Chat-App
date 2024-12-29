@@ -19,6 +19,7 @@ export default function MESSAGE({message}){
             />
             <br />
             </div>
+            <div>
             <div className="chat">
                 {/* <div className="message"> */}
                 <h3 
@@ -28,6 +29,7 @@ export default function MESSAGE({message}){
                 <h6>{new Date(message.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</h6>
                 {/* <h6>{new Date(message.createdAt).toDateString()}</h6> */}
                 
+            </div>
             </div>
             </div>
         </div>

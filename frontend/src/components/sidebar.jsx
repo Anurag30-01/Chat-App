@@ -29,6 +29,7 @@ const SIDEBAR=()=>{
     const {loading,logout}=useLogout();
     return(
         <>
+        <div>
         <form className="search_bar" onSubmit={handleSubmit} >
         <input type="text" placeholder="search..." value={search} onChange={(e)=>setSearch(e.target.value)} />
         <button type="submit">
@@ -36,6 +37,7 @@ const SIDEBAR=()=>{
         <IoSearchSharp />
         </button>
         </form>
+        </div>
         <div className="scroll">
         <PROFILES />
         

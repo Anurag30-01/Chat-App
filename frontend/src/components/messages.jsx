@@ -17,7 +17,7 @@ const MESSAGES=()=> {
     },100);
   },[messages]);
   return (
-    <div>
+    <div >
       {/* {loading?<span className='loader'></span>:null} */}
       {!loading && messages.length===0 && (<p className='No_messages'>Send a message to start conversation...</p>)}
       {!loading && messages.length > 0 && messages.map((message)=>(
