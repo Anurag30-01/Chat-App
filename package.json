@@ -28,5 +28,8 @@
   "devDependencies": {
     "gh-pages": "^6.2.0",
     "nodemon": "^3.1.7"
-  }
+  },
+  "engines": {
+  "node": ">=14.0.0"
+}
 }
