@@ -1,12 +1,11 @@
 {
-  
   "name": "chat-app",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "server": "nodemon backend/server.js",
-		"start": "node backend/server.js",
-		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "node backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "type": "module",
   "keywords": [],
@@ -30,6 +29,8 @@
     "nodemon": "^3.1.7"
   },
   "engines": {
-  "node": ">=14.0.0"
+    "node": ">=18.0.0 <21.0.0"
+  }
 }
-}
+
+
