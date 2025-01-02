@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "chat-app": "file:..",
+    "gopd": "^1.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
@@ -32,6 +33,6 @@
     "vite": "^5.4.10"
   },
   "engines": {
-  "node": ">=14.0.0"
-}
+    "node": ">=14.0.0"
+  }
 }
