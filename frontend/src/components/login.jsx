@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './styles/login.css'
 import { Link } from 'react-router-dom'
 import useLogin from '../hooks/useLogin';
+
 export default function LOGIN(){
     const [username,setUsername]=useState("");
     const [password,setPassword]=useState("");
@@ -14,8 +15,9 @@ export default function LOGIN(){
     }
     return(
         <>
-        <div className='login_div'>
-            <h1>Login <span>ChatApp</span></h1>
+        
+        <div className='login_div '>
+            <h1 className='text-[32px] mt-2'>Login <span>ChatApp</span></h1>
             <form onSubmit={handleSubmit}>
             <div className='form'>
                 <label>username: </label><br />
@@ -24,12 +26,11 @@ export default function LOGIN(){
                 <label >Password:</label><br />
                 <input type="password" placeholder='Enter password' value={password}
                 onChange={(e)=>setPassword(e.target.value)}/><br />
-                {/* <a href="">'Forget Password'</a><br /><br /> */}
-            <Link to="/signup"><p>'Don't have an account!'</p></Link>
+            <Link className='duration-100' to="/signup"><p>'Don't have an account!'</p></Link>
             </div>
             <br />
-            <div className='submit'>
-            <div><button disabled={loading}>{loading?<span className='loader'></span>:"Login"}</button></div>
+            <div className='submit '>
+            <div><button className='duration-300 ease-in-out ...' disabled={loading}>{loading?<span className="loader"></span>:"Login"}</button></div>
             </div>
             </form>
         </div>

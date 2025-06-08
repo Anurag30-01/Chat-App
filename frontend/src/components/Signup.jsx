@@ -21,7 +21,7 @@ const SIGNUP=()=>{
     return(
         <>
         <div className='signUp_div'>
-            <h1>Sign Up <span>ChatApp</span></h1>
+            <h1 className='text-[32px] mt-2'>Sign Up <span>ChatApp</span></h1>
             <div>
                 <form onSubmit={handleSubmit} >
                     <div className='form' name='signUp_form'>
@@ -67,7 +67,7 @@ const GENDERCHECKBOX=({onCheckboxChange,selectedGender})=>{
                     <input type="radio" name="gender" id='female' checked={selectedGender === "female"}
                     onChange={()=>onCheckboxChange("female")}/>
                     {/* <span className="checkmark"></span> */}
-                    </label><br />
+                    </label><br /><br />
                     <Link to="/login"><p>' Already have an Account ? ' </p></Link>
         </div>
         </>

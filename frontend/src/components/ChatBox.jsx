@@ -6,13 +6,10 @@ import useSendMessage from "../hooks/useSendMessage";
 import MESSAGES from "./messages";
 import useGetMessages from "../hooks/useGetMessages";
 import { useAuthContext } from "../context/AuthContext";
-export default function CHATBOX() {
+export default function CHATBOX({onBack}) {
   // const NoMsgSelected = true;
+
   const { selectedConversation, setSelectedConversation } = useConversation();
-
-  // const {loading,messages} = useGetMessages();
-  //         console.log("MESSAGES:",messages);
-
   useEffect(() => {
     return () => setSelectedConversation(null);
   }, [setSelectedConversation]);
@@ -20,56 +17,69 @@ export default function CHATBOX() {
   return (
     <>
       {!selectedConversation ? (
-        <div className="center">
-          <NoChatSelected />
+        <div className="flex justify-center items-center h-full">
+          <NoChatSelected handleBack={onBack} />
         </div>
       ) : (
-        <ChatSelected />
+        <ChatSelected handleBack={onBack}/>
       )}
     </>
   );
 }
-const NoChatSelected = () => {
+const NoChatSelected = ({handleBack}) => {
   const { authUser } = useAuthContext();
   return (
     <>
       <div className="initial_msg">
         <div>
-          <h2>
+          <h2 className="text-white text-[64px] mb-2">
             &#128075; Welcome <span>{authUser.fullName}</span>
           </h2>
-          <h3>Select a chat to start messaging &#128640;</h3>
-          <IoMdChatboxes className="icon" />
+          <h3 className="text-white text-[32px] mb-4">Select a chat to start messaging &#128640;</h3>
+          <IoMdChatboxes className="text-white text-[96px] flex justify-self-center" />
+          <button className="md:hidden text-white font-600 text-[18px]" onClick={handleBack}>← Back</button>
         </div>
       </div>
     </>
   );
 };
-const ChatSelected =()=>{
+const ChatSelected =({handleBack})=>{
   const{selectedConversation,setSelectedConversation}=useConversation();
   return(
     
       <>
-        <div className="chatbox_header">
-          <h2>
-            <span>To: </span>
+        <div className="chatbox_header flex items-center w-full">
+          <div className="">
+  <button onClick={handleBack} className=" md:hidden text-white pl-1 text-[24px] md:text-[18px] font-semibold" title="Back to Chats">
+    ←
+  </button>
+  
+</div>
+          <h2 className="text-white text-[24px] md:text-[32px] ">
+            To:
           </h2>
-          <div className="header_img">
-            <img
+          <div className="header_img w-[42px]  mt-1">
+            <img className="w-[42px] h-[42px]  rounded-full object-cover"
               src={selectedConversation.profilePic}
               alt="user avatar"
             />
           </div>
-          <h2>
-            <span>{selectedConversation.fullName}</span>
+          <h2 className="text-white text-[24px] md:text-[32px] text-ellipsis overflow-hidden whitespace-nowrap">
+            {selectedConversation.fullName}
           </h2>
+          {/** Only show on small screens */}
+          
+
         </div>
-        <div className="scroll">
+        <div className="scroll h-[75%] md:h-[80%] bg-slate-900/30">
           <MESSAGES />
         </div>
-        <div className="message_input">
+        
+
+        <div className="w-full text-xl">
           <MESSAGE_INPUT />
         </div>
+        
       </>
   );
 }
@@ -84,10 +94,10 @@ const MESSAGE_INPUT=()=>{
   }
   return(
       <>
-          <form className="message_input" action="" onSubmit={handleSubmit}>
-              <input type="text" placeholder="Send Messages..." value={message}
+          <form className="message_input flex justify-center " action="" onSubmit={handleSubmit}>
+              <input className="md:h-[48px] w-[80%] md:w-full mr-1 md:mr-2 p-4" type="text" placeholder="Send Messages..." value={message}
               onChange={(e)=>setMessage(e.target.value)} />
-              <button type="submit">
+              <button className="text-[32px] md:h-[48px] w-[48px] flex justify-center items-center" type="submit">
                   {loading?<span className="loader"></span>:<FiSend />}
               </button>
           </form>

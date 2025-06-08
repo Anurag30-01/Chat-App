@@ -17,12 +17,16 @@ const MESSAGES=()=> {
     },100);
   },[messages]);
   return (
-    <div >
+    <div className=''>
       {/* {loading?<span className='loader'></span>:null} */}
-      {!loading && messages.length===0 && (<p className='No_messages'>Send a message to start conversation...</p>)}
-      {!loading && messages.length > 0 && messages.map((message)=>(
+      {!loading && messages.length === 0 && (
+        <div className='flex justify-center items-center '>
+          <p className='No_messages w-[90%] my-3'>Send a message to start conversation...</p>
+        </div>
+      )}
+      {!loading && messages.length > 0 && messages.map((message) => (
         <div key={message._id} ref={lastMessageRef}>
-          <MESSAGE  message={message}/>
+          <MESSAGE message={message} />
         </div>
       ))}
     </div>

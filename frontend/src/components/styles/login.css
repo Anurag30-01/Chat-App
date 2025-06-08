@@ -1,17 +1,15 @@
+@import "tailwindcss";
 .login_div{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
     max-width: 500px;
-    min-width: 300px;
+    min-width: 350px;
+    transform: translate(-50%, -50%);
+    
     /* max-height: 720px; */
-    border-radius: 20px 20px;
-    background: linear-gradient(rgba(67, 67, 67, 0.934),rgba(67, 67, 67, 0.852));
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 5px 5px;
+    background: linear-gradient(rgba(18, 17, 17, 0.701),rgba(20, 20, 20, 0.587));
     text-align: center;
     padding: 8px;
     overflow: hidden;
@@ -29,18 +27,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 500px;
-    min-width: 300px;
-    /* max-height: 720px; */
-    border-radius: 20px 20px;
-    background: linear-gradient(rgba(67, 67, 67, 0.934),rgba(67, 67, 67, 0.852));
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+    min-width: 350px;
+    transform: translate(-50%, -50%);
+    border-radius: 5px 5px;
+    background: linear-gradient(rgba(18, 17, 17, 0.701),rgba(20, 20, 20, 0.587));
     text-align: center;
-    padding: 8px;
+    padding: 2px;
     overflow: hidden;
 }
 .signUp_div a{
@@ -57,16 +51,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 90%;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 20px 20px;
-    background: linear-gradient(rgba(67, 67, 67, 0.934),rgba(67, 67, 67, 0.852));
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 5px 5px;
+    background: linear-gradient(rgba(67, 67, 67, 0.311),rgba(67, 67, 67, 0.247));
     text-align: center;
-    padding: 8px;
+    padding: 2px;
 }
 h1{
     font-size: 600;
@@ -79,7 +67,7 @@ span{
     /* overflow: hidden; */
 }
 .form{
-    margin:50px;
+    margin:16px;
     margin-bottom: 0px;
     text-align: left;
 }
@@ -117,7 +105,7 @@ span{
     outline: none;
 }
 .gender{
-    margin-left: 50px;
+    margin-left: 24px;
     margin-bottom: 38px;
     text-align: left;
 }
@@ -216,7 +204,6 @@ span{
   }
 
 .submit button{
-    /* font-weight: 600; */
     width: 50%;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -232,67 +219,40 @@ span{
     cursor: pointer;
 }
 
-.avatar_img img{
-    width: 38px;
-    /* border-radius: 50px; */
-}
 .online img{
     border: solid rgb(0, 255, 0) 2px;
     border-radius: 50px;
 }
-.avatar{
-    margin-left: 0px;
-    margin-bottom: 0px;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    justify-items:start;
-}
 .scroll{
-    max-height: 80%;
-    min-height: 70%;
+    /* max-height: 80%;
+    min-height: 70%; */
     overflow-y: scroll;
     margin-bottom:5px;
     margin-top: 8px;
-    margin-left: 8px;
+    /* margin-left: 8px; */
     margin-right: 0px;
 }
 .scroll::-webkit-scrollbar {
-    width: 5px;
+    width: 3px;
   }
 .scroll::-webkit-scrollbar-thumb {
     background:rgba(128, 128, 128, 0.444); 
-    border-radius: 5px;
+    border-radius: 3px;
   }
 .scroll::-webkit-scrollbar-thumb:hover {
     background:grey; 
   }
-.profile{
-    margin-right: 8px;
-    padding: 0px;
-    cursor: pointer;
-}
 .divider{
-    border: solid grey 1px;
+    border: groove rgba(249, 246, 246, 0.189) 1px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 .selected{
     background-color: rgb(1, 102, 153);
 }
-.profile div{
-    margin: 0px;
-    padding: 1px;
-}
+
 .profile:hover{
     background-color: rgb(47, 59, 59);
-}
-.profile p{
-    font-weight: 500;
-    font-size: 16px;
-    /* margin-bottom: 50%; */
-    color: aliceblue;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .profile time{
     font-weight: 500;
@@ -300,22 +260,12 @@ span{
     color: aliceblue;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 } 
-.search_bar{
-    margin-left: auto;
-    justify-self: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-bottom: 15px;
-}
 .search_bar input{
     border: solid aqua 0px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-right: 5px;
-    width: 70%;
-    max-height: 30px;
     outline: none;
-    background-color: rgba(0, 0, 0, 0.611);
+    background-color: rgba(26, 26, 26, 0.847);
     color: aliceblue;
     padding: 8px;
     font-weight: 500;
@@ -323,16 +273,14 @@ span{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .search_bar button{
-    height: 36px;
-    /* width: 30px; */
-    border-radius: 5px;
+    /* height: 36px;
+    width: 30px; */
+    border-radius: 3px;
     border: transparent;
     cursor: pointer;
     color:aqua;
     /* outline: 0px; */
-    font-size: 20px ;
-    padding-top: 6px;
-    background-color: rgba(0, 0, 0, 0.611);
+    background-color:  rgba(26, 26, 26, 0.847);
 }
 .logout_btn{
     display: flex;
@@ -357,35 +305,14 @@ span{
 /* .full_div{
     width: 100%;
 } */
- .prof_div{
-
-    width: 35%;
-    max-width: 45%;
-    min-width: 155px;
-    max-height: 100%;
-    resize: horizontal;
-    overflow: auto;
- }
- .prof_div::-webkit-resizer {
-    /* width: 50px;
-    height: 50px; */
-    color:aqua;
-    border: solid rgb(255, 255, 255) 2px;
-    border-width: 5px;
-    display: inline;
-  }
- .chat_div{
+ /* .chat_div{
     width: 65%;
-    /* max-width:70%; */
-    min-width: 40%;
- }
+ } */
 .home{
     display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    /* max-height: 90%;
-    min-height: 420px; */
-    height: 85%;
+    justify-content: space-evenly;
+    /* padding: 5px; */
+    /* height: 85%; */
     margin: 0px;
 }
 .wall{
@@ -393,69 +320,61 @@ span{
     margin: 8px;
 }
 .chatbox_header{
-    background-color: rgba(0, 0, 0, 0.611);
-    border-radius: 8px;
-    height: 32px;
+    background-color: rgb(26, 25, 26);
+    border-radius: 2px;
+    height: 3rem;
     text-align: left;
     display: flex;
-    /* margin: 5px; */
     padding: 3px;
 
 }
-.center{
+/* .center{
     position: absolute;
     top: 40%;
     margin-right: 3%;
-}
+} */
 .header_img img{
-    width: 28px;
-    margin: 2px;
     margin-left: 3px;
     /* border-radius: 50px; */
 }
 .chatbox_header h2{
     /* color: aliceblue; */
-    margin-top: 5px;
-    margin-bottom: 1px;
-    margin-left: 5px;
+    /* margin-top: 5px; */
+    /* margin-bottom: 1px; */
+    margin-left: 1rem;
     font-weight: 500;
-    font-size: 18px;
+    
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 .initial_msg{
     display: flex;
     align-items:center;
-    /* text-align: center; */
+    text-align: center;
     justify-content: center;
-    /* position: absolute; */
-    /* top: 40%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
 }
-.initial_msg h2{
+/* .initial_msg h2{
     color: aliceblue;
     font-size: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-}
-.initial_msg h3{
+} */
+/* .initial_msg h3{
     color: aliceblue;
     font-size: 16px;
     font-style: italic;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-}
+} */
 .No_messages{
     border: solid grey 2px;
-    border-radius: 5px;
-    background-color: gray;
+    color: aliceblue;
+    border-radius: 2px;
+    background-color: rgba(128, 128, 128, 0.21);
 }
-.icon{
+/* .icon{
     color: aliceblue;
     font-size: 48px;
-}
+} */
 /* .inbox_home{
     display: flex;
     justify-content:flex-end;
@@ -465,7 +384,7 @@ span{
     display: flex;
     flex-direction: column;
     gap: 10px;  /* space between messages */
-    max-width: 600px;
+    max-width: 90%;
     margin: 0 auto;
   }
   
@@ -473,6 +392,7 @@ span{
   .chat-start {
     display: flex;
     justify-content: flex-start; /* Align messages to the left */
+    width: 100%;
   }
   
   .chat-start .message {
@@ -480,7 +400,7 @@ span{
     color: #333;
     padding: 10px 15px;
     border-radius: 20px;
-    max-width: 70%;
+    width: 100%;
     word-wrap: break-word;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -497,7 +417,7 @@ span{
     color: #333;
     padding: 10px 15px;
     border-radius: 20px;
-    max-width: 70%;
+    max-width: 100%;
     word-wrap: break-word;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -506,6 +426,7 @@ span{
     display: flex;
     /* justify-items: end; */
     justify-content: end;
+    width: 100%;
     /* align-items: center; */
 }
 .chatStart{
@@ -569,35 +490,24 @@ span{
     color: rgb(255, 255, 255);
 }
 .message_input{
-    text-align: start;
-    bottom: 1%;
-    display: flex;
     text-decoration: none;
-    width: 100%;
 }
 .message_input input{
-    height: 32px;
-    width: 90%;
-    font-size: 16px;
     font-weight: 300;
     font-family:Arial, Helvetica, sans-serif;
-    background-color: rgba(0, 0, 0, 0.611);
+    background-color: rgb(26, 25, 26);
     color: aliceblue;
     border:solid black 2px;
     border-radius: 5px;
     outline: none;
 }
 .message_input button{
-    /* margin-top: 5%; */
-    /* margin-left: 2%; */
-    margin-left:1%;
-    background-color: rgba(0, 0, 0, 0.611);
+    background-color: rgb(26, 25, 26);
     cursor: pointer;
     color: aqua;
-    font-size:large;
     text-decoration: none;
     border:solid black 2px;
-    border-radius: 5px;
+    border-radius: 3px;
     /* padding-top: 5px; */
 }
 .loader {

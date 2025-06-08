@@ -9,10 +9,17 @@ export default function MESSAGE({message}){
     const chatClassName=fromMe? 'chat-end':'chat-start';
     const profilePic =fromMe? authUser.profilePic:selectedConversation?.profilePic;
     const bubbleBgColor=fromMe?'bubbleBgSender':'bubbleBgReceiver';
+    const message_time = new Date(message.createdAt).toLocaleString([], { 
+        year: 'numeric', 
+        month: '2-digit', 
+        day: '2-digit', 
+        hour: '2-digit', 
+        minute: '2-digit' 
+    });
     return(
         <div className="chat-container">
             <div className={`${chatClassName}`}>
-            <div className="inbox_img">
+            <div className="inbox_img flex-shrink-0">
             <img
               src={profilePic}
               alt="user avatar"
@@ -20,14 +27,12 @@ export default function MESSAGE({message}){
             <br />
             </div>
             <div>
-            <div className="chat">
+            <div className="chat  text-ellipsis">
                 {/* <div className="message"> */}
                 <h3 
                 className={`${bubbleBgColor}`}
                 >{message.message}</h3>
-                {/* </div> */}
-                <h6>{new Date(message.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</h6>
-                {/* <h6>{new Date(message.createdAt).toDateString()}</h6> */}
+                <h6>{`${message_time}`}</h6>
                 
             </div>
             </div>
