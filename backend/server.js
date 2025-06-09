@@ -41,6 +41,7 @@ app.use("/api/users", userRoutes);
 // Serve frontend static files if available
 const distPath = path.join(__dirname, "../frontend/dist");
 if (fs.existsSync(distPath)) {
+  console.log("✅ Frontend build folder found. Serving static files.");
   app.use(express.static(distPath));
   app.get("*", (req, res) => {
     res.sendFile(path.join(distPath, "index.html"));
