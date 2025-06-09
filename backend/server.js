@@ -11,7 +11,7 @@ import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
-import { initializeSocket } from "./socket/socket.js";
+
 
 dotenv.config();
 
@@ -30,7 +30,7 @@ app.use(
 
 // Middleware to parse JSON and cookies
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Routes
@@ -56,22 +56,8 @@ if (fs.existsSync(frontendBuildPath)) {
   );
 }
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something went wrong!");
-});
-
-// Initialize Socket.IO with the HTTP server
-initializeSocket(server);
-
 // Start server and connect to DB
-server.listen(PORT, async () => {
-  try {
-    await connectToMongoDB();
-    console.log(`Server Running on port ${PORT}`);
-  } catch (err) {
-    console.error("Failed to connect to MongoDB", err);
-    process.exit(1);
-  }
+server.listen(PORT, () => {
+	connectToMongoDB();
+	console.log(`Server Running on port ${PORT}`);
 });
