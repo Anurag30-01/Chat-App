@@ -3,7 +3,7 @@ import PROFILES from "./profiles";
 // import { LiaSearchengin } from "react-icons/lia";
 import { IoSearchSharp } from "react-icons/io5";
 
-import "./styles/login.css";
+import "./styles/App.css";
 import useLogout from "../hooks/useLogout";
 import { useState } from "react";
 import useConversation from "../zustand/useConversation";
@@ -45,10 +45,7 @@ const SIDEBAR=({onSelectProfile})=>{
         
         
         </div>
-        {/* <div className='logout_btn'>
-            {!loading ? (<Link to="/login"><button><CiLogout onClick={logout} /></button></Link>):(<span className="loader"></span>)}
-            
-        </div> */}
+        
         </>
     );
 }

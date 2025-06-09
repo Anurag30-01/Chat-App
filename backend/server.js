@@ -40,16 +40,16 @@ app.use("/api/users", userRoutes);
 
 // Serve frontend static files if available
 
-const frontendBuildPath = path.join(__dirname,'frontend', 'dist');
+const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'dist');
+
+console.log('Looking for frontend build folder at:', frontendBuildPath);
 
 if (fs.existsSync(frontendBuildPath)) {
+  console.log('✅ Frontend build folder found. Serving static files.');
   app.use(express.static(frontendBuildPath));
-
   app.get('*', (req, res) => {
     res.sendFile(path.join(frontendBuildPath, 'index.html'));
   });
-
-  console.log('✅ Frontend build folder found. Serving static files.');
 } else {
   console.error(
     '❌ Frontend build folder not found. Please run `npm run build` inside the frontend folder.'

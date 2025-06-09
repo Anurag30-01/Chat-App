@@ -22,16 +22,16 @@ function HOME() {
 
   return (
     <>
-      <div className="centered-div w-[90%] h-[95%] md:w-[95%] md:h-[95%] ">
+      <div className="centered-div  w-[90%] h-[95%] md:w-[95%] md:h-[95%] ">
         <div>
-          <nav className="flex justify-between items-center w-full text-white px-4 py-4 md:px-24">
-            <h1 className="text-[28px] md:text-[36px]">
+          <div className="flex justify-between items-center text-white px-4 py-4 md:px-24">
+            <p className="text-[28px] md:text-[36px]">
               <span>ChatApp</span>
-            </h1>
-            <div className="flex justify-end items-center md:w-[50%] ">
-              <h1 className="text-[10px] md:text-[18px] w-[5rem] md:w-[10rem] text-left overflow-hidden whitespace-nowrap text-ellipsis">
+            </p>
+            <div className="flex justify-end items-center">
+              <p className="text-[10px] md:text-[18px] w-[5rem] md:w-[10rem] text-left overflow-hidden whitespace-nowrap text-ellipsis">
                 Logged in as: <br /> <span>{authUser.fullName}</span>
-              </h1>
+              </p>
               <button
                 onClick={handleOpenProfileUpdate}
                 className="text-[28px] md:text-[48px] text-white pr-2 pl-1 md:pl-2 md:pr-8 cursor-pointer flex-shrink-0"
@@ -73,7 +73,7 @@ function HOME() {
                 )}
               </div>
             </div>
-          </nav>
+          </div>
         </div>
         <div className="home w-full h-[95%] md:h-[85%]  ">
           <div
@@ -84,7 +84,7 @@ function HOME() {
             <SIDEBAR onSelectProfile={() => setIsChatOpen(true)} />
           </div>
           <div
-            className={`w-full md:w-[60%] ${
+            className={` sm:w-full  md:w-[60%] ${
               isChatOpen ? "block" : "hidden"
             } sm:block`}
           >

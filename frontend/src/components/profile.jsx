@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/login.css";
+import "./styles/App.css";
 import useConversation from "../zustand/useConversation";
 import { useSocketContext } from "../context/socketContext";
 

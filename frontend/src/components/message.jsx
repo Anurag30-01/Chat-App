@@ -1,6 +1,6 @@
 import { useAuthContext } from "../context/AuthContext";
 import useConversation from "../zustand/useConversation";
-import "./styles/login.css";
+import "./styles/App.css";
 
 export default function MESSAGE({message}){
     const {authUser} =useAuthContext();

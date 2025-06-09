@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import LOGIN from "./components/login";
-import "./App.css";
+import "./components/styles/App.css";
 import SIGNUP from "./components/Signup";
 import HOME from "./components/Home";
 import { Toaster } from "react-hot-toast";
@@ -16,7 +16,7 @@ function App() {
   const { authUser } = useAuthContext();
   return (
     <>
-      <div className="relative w-screen h-screen overflow-hidden bg-black">
+      <div className="relative w-full h-screen overflow-hidden bg-black">
         <ShootingStars />
         <StarsBackground />
       </div>

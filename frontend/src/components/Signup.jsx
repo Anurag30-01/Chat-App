@@ -21,7 +21,7 @@ const SIGNUP=()=>{
     return(
         <>
         <div className='signUp_div'>
-            <h1 className='text-[32px] mt-2'>Sign Up <span>ChatApp</span></h1>
+            <p className='text-white text-[32px] mt-2'>Sign Up <span>ChatApp</span></p>
             <div>
                 <form onSubmit={handleSubmit} >
                     <div className='form' name='signUp_form'>
