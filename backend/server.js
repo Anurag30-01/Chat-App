@@ -39,16 +39,20 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 // Serve frontend static files if available
-const distPath = path.join(__dirname, "../frontend/dist");
-if (fs.existsSync(distPath)) {
-  console.log("✅ Frontend build folder found. Serving static files.");
-  app.use(express.static(distPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(distPath, "index.html"));
+
+const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'dist');
+
+if (fs.existsSync(frontendBuildPath)) {
+  app.use(express.static(frontendBuildPath));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, 'index.html'));
   });
+
+  console.log('✅ Frontend build folder found. Serving static files.');
 } else {
   console.error(
-    "Frontend build folder not found. Ensure 'npm run build' is run successfully."
+    '❌ Frontend build folder not found. Please run `npm run build` inside the frontend folder.'
   );
 }
 
