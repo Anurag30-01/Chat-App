@@ -31,8 +31,8 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
 
     try {
       const res = await axios.put(
-        "http://localhost:5000/api/users/update-profile",
-        // "https://chat-app-7mt7.onrender.com/api/users/update-profile",
+        // "http://localhost:5000/api/users/update-profile",
+        "https://chat-app-7mt7.onrender.com/api/users/update-profile",
         formData,
         {
           headers: {
