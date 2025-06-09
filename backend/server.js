@@ -40,7 +40,7 @@ app.use("/api/users", userRoutes);
 
 // Serve frontend static files if available
 
-const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'dist');
+const frontendBuildPath = path.join(__dirname, 'frontend', 'dist');
 
 console.log('Looking for frontend build folder at:', frontendBuildPath);
 
