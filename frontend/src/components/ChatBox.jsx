@@ -71,7 +71,7 @@ const ChatSelected =({handleBack})=>{
           
 
         </div>
-        <div className="scroll h-[75%] md:h-[80%] bg-slate-900/30">
+        <div className="scroll h-[85%] md:h-[85%] bg-slate-900/30">
           <MESSAGES />
         </div>
         

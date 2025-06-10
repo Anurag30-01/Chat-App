@@ -16,22 +16,19 @@ import { app, server } from "./socket/socket.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const __dirname = path.resolve();
 
+// Middleware to parse JSON and cookies
+app.use(express.json());
+app.use(cookieParser());
 // CORS middleware
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
-
-// Middleware to parse JSON and cookies
-app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
 // Routes
 app.use("/api/auth", authRoutes);
@@ -39,7 +36,7 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 // Serve frontend static files if available
-
+const __dirname = path.resolve();
 const frontendBuildPath = path.join(__dirname, 'frontend', 'dist');
 
 console.log('Looking for frontend build folder at:', frontendBuildPath);

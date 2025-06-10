@@ -8,7 +8,7 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
   const [profilePic, setProfilePic] = useState(null);
   const [preview, setPreview] = useState(user.profilePic || "");
   const { setAuthUser } = useAuthContext(); // Assuming you have a context to manage auth user
-
+  const [loading, setLoading] = useState(false);
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setProfilePic(file);
@@ -23,12 +23,13 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData();
-    // formData.append("fullName", fullName?.trim() || "");
-    // formData.append("username", username?.trim() || "");
+    formData.append("fullName", fullName?.trim() || "");
+    formData.append("username", username?.trim() || "");
 
     if (profilePic) formData.append("profilePic", profilePic);
-
+    setLoading(true);
     try {
       const res = await axios.put(
         // "http://localhost:5000/api/users/update-profile",
@@ -50,7 +51,11 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
       toast.success("Profile updated successfully ✅");
       onUpdate(res.data);
     } catch (err) {
+      toast.error("Profile not updated ❌");
       console.error("Profile update failed:", err);
+    }finally{
+      setLoading(false);
+       // Close the modal after submission
     }
   };
 
@@ -77,7 +82,7 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
         </div>
 
         {/* Full Name */}
-        {/* <div>
+         <div>
           <label className="block text-sm font-medium mb-1">Full Name</label>
           <input
             type="text"
@@ -98,7 +103,7 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
             placeholder="Enter username"
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-        </div> */}
+        </div>
 
         {/* Buttons */}
         <div className="flex justify-end space-x-2 pt-4">
@@ -111,9 +116,9 @@ function ProfileUpdate({ user, onClose, onUpdate }) {
           </button>
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            className="px-4 py-2 bg-cyan-600 text-white rounded hover:bg-cyan-700 transition"
           >
-            Update
+            {loading?<span className="loader"></span>:<p>Update</p>}
           </button>
         </div>
       </form>

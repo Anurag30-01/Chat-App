@@ -376,9 +376,6 @@ span {
   margin-top: 6px;
   margin-bottom: 1px;
 }
-.inbox_img img {
-  width: 28px;
-}
 .inbox_img {
   margin: 2%;
 }
@@ -464,7 +461,7 @@ span {
   bottom: 0;
   margin: auto;
   border: 3px solid;
-  border-color: transparent transparent #ff3d00 #ff3d00;
+  border-color: transparent transparent aqua aqua;
   /* border-color: transparent transparent aqua aqua; */
   width: 26px;
   height: 26px;

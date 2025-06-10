@@ -75,7 +75,7 @@ function HOME() {
             </div>
           </div>
         </div>
-        <div className="home w-full h-[95%] md:h-[85%]  ">
+        <div className="home w-full h-[85%] md:h-[80%]  ">
           <div
             className={`w-full md:w-[20%] ${
               isChatOpen ? "hidden" : "block"

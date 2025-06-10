@@ -19,8 +19,9 @@ export default function MESSAGE({message}){
     return(
         <div className="chat-container">
             <div className={`${chatClassName}`}>
-            <div className="inbox_img flex-shrink-0">
+            <div className="flex-shrink-0 w-[42px] h-[42px] flex justify-center items-center">
             <img
+              className="w-[36px] h-[36px] object-cover rounded-full"
               src={profilePic}
               alt="user avatar"
             />

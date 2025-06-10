@@ -1,6 +1,4 @@
 import PROFILES from "./profiles";
-
-// import { LiaSearchengin } from "react-icons/lia";
 import { IoSearchSharp } from "react-icons/io5";
 
 import "./styles/App.css";
@@ -38,7 +36,7 @@ const SIDEBAR=({onSelectProfile})=>{
         </button>
         </form>
         </div>
-        <div  className="scroll h-[80%] md:h-[85%]">
+        <div  className="scroll h-[90%] md:h-[95%]">
             <button onClick={onSelectProfile}>
                 <PROFILES />
             </button>
